@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Location Sharing</title>
+</head>
+<body>
+<h1>Share My Location</h1>
+<button onclick="shareLocation()">Share Location</button>
+<p id="result"></p>
+<script>
+function shareLocation() {
+navigator.geolocation.getCurrentPosition(function(p) {
+var lat = p.coords.latitude;
+var lon = p.coords.longitude;
+document.getElementById("result").innerHTML =
+'<a href="https://www.google.com/maps?q=' + lat + ',' + lon + '">Open My Location</a>';
+});
+}
+</script>
+</body>
+</html>
